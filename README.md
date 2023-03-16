@@ -100,5 +100,6 @@ php transaction-cli.php {references_id} {status}
 
 ## Authors
 
-- [@m4bdul4aziz](https://github.com/m4bdul4aziz)
+- This application was built by.
+  [@m4bdul4aziz](https://github.com/m4bdul4aziz)
 
