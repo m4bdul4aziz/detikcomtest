@@ -87,7 +87,7 @@ class TransaksiController
         }
 
 
-        echo JsonResponseHelper::success($data ?? [], !empty($data) ? "Berhasil, data status transaksi" : "Transaksi tidak ditemukan",);
+        echo JsonResponseHelper::success($data ?? null, !empty($data) ? "Berhasil, data status transaksi" : "Transaksi tidak ditemukan",);
     }
 
     private function validateInput($input)

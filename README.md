@@ -37,15 +37,15 @@ This is a simple CRUD application that allows users to perform basic database op
 
 #### Response
 ```http
-  {
-    "status": true,
-    "message": "Berhasil, data status transaksi",
-    "data": {
-        "references_id": "6412630ed27d3",
-        "invoice_id": "1",
-        "status": "success"
+    {
+        "success": true,
+        "data": {
+            "references_id": "6412630ed27d3",
+            "invoice_id": "1",
+            "status": "success"
+        },
+        "message": "Berhasil, data status transaksi"
     }
-}
 ```
 
 Takes two numbers and returns the sum.
@@ -67,27 +67,27 @@ Takes two numbers and returns the sum.
 
 #### Response Success
 ```http
-  {
-    "status": true,
-    "message": "Berhasil, data transaksi berhasil dibuat",
-    "data": {
-        "references_id": "64127cc03b6f0",
-        "number_va": 420557,
-        "status": "pending"
+    {
+        "success": true,
+        "data": {
+            "references_id": "6412b08ff2560",
+            "number_va": 807509,
+            "status": "pending"
+        },
+        "message": "Berhasil, data transaksi berhasil dibuat"
     }
 }
 ```
 
 #### Response Error
 ```http
-  {
-    "status": false,
-    "message": "Gagal, transaksi gagal dibuat",
-    "data": null,
-    "error": {
-        "message": "Invalid input: customer_name is required"
+    {
+        "success": false,
+        "message": "Failed to retrieve data.",
+        "errors": {
+            "message": "Invalid input: merchant_id is required"
+        }
     }
-}
 ```
 
 
