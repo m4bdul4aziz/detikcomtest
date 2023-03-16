@@ -25,7 +25,7 @@ class TransaksiController
                 'error' => $errors
             ];
 
-            echo json_encode($response);
+            echo JsonResponseHelper::error('Failed to retrieve data.', [], $errors);
             exit;
         }
 
@@ -41,13 +41,9 @@ class TransaksiController
             ];
         }
 
-        $response = [
-            'status' => $data ? true : false,
-            'message' => !empty($data) ? "Berhasil, data transaksi berhasil dibuat" : "Gagal, transaksi gagal dibuat",
-            'data' => $data,
-        ];
+        $message = !empty($data) ? "Berhasil, data transaksi berhasil dibuat" : "Gagal, transaksi gagal dibuat";
 
-        echo json_encode($response);
+        echo JsonResponseHelper::success($data, $message);
     }
 
 
@@ -90,16 +86,8 @@ class TransaksiController
             ];
         }
 
-        $response = [
-            'status' => isset($data) ? true : false,
-            'message' => !empty($data) ? "Berhasil, data status transaksi" : "Transaksi tidak ditemukan",
-            'data' => $data ?? null
 
-        ];
-
-
-        header('Content-Type: application/json');
-        echo json_encode($response);
+        echo JsonResponseHelper::success($data ?? [], !empty($data) ? "Berhasil, data status transaksi" : "Transaksi tidak ditemukan",);
     }
 
     private function validateInput($input)

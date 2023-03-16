@@ -1,7 +1,9 @@
 <?php
-require_once 'app/Helpers/helpers.php';
+require_once 'app/Helpers/route.php';
 require_once 'app/Config/Config.php';
 require_once 'app/Config/Database.php';
+
+require_once 'app/Helpers/responseJson.php';
 
 require_once 'app/Controllers/HomeController.php';
 require_once 'app/Controllers/TransaksiController.php';
